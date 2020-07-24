@@ -1,12 +1,16 @@
 pipeline{
     agent any
 
+    tools{
+        jdk 'jdk8'
+        maven 'maven3'
+    }
 
     stages{
         stage('Test'){
             steps{
                 script{
-                    bat 'echo test is running!'
+                    bat 'mvn clean test'
                 }
             }
         }
